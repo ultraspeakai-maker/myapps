@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vectra Labs | Android Apps & Bots Developer</title>
+  <meta name="description" content="Official website of Vectra Labs, developers of advanced Android applications, utilities, and AI-powered mobile bots.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Open Graph Meta Tags (SEO) -->
+  <meta property="og:title" content="Vectra Labs | Android Apps & Bots">
+  <meta property="og:description" content="Discover advanced utilities and next-generation AI tools built for Android by Vectra Labs.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:url" content="https://vibhutipandey.in">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo-link">
+        <img src="assets/logo.png" alt="Vectra Labs Logo" class="logo-img">
+        <div class="logo-text">Vectra <span>Labs</span></div>
+      </a>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">☰</button>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html#apps" class="nav-link">Our Apps</a></li>
+        <li><a href="index.html#about" class="nav-link">About Us</a></li>
+        <li><a href="contact.html" class="nav-link">Support</a></li>
+        <li><a href="contact.html" class="cta-button cta-outline">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="badge">Official Developer Webpage | <span>vibhutipandey.in</span></div>
+      <h1 class="hero-title">Intelligent <span>Mobile Apps</span> & Automation Bots</h1>
+      <p class="hero-description">We build premium, privacy-focused Android utilities and AI-powered applications that simplify tasks, spark creativity, and run seamless operations.</p>
+      <div class="hero-actions">
+        <a href="#apps" class="cta-button cta-solid">Browse Apps</a>
+        <a href="contact.html" class="cta-button cta-outline">Get Support</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apps Catalog Section -->
+  <section class="catalog-section" id="apps">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Android Catalog</h2>
+        <p class="section-subtitle">High-quality, secure apps verified and ready for deployment on the Google Play Store.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All Applications</button>
+        <button class="filter-btn" data-filter="ai">AI Tools</button>
+        <button class="filter-btn" data-filter="utilities">Utilities</button>
+        <button class="filter-btn" data-filter="creative">Creative</button>
+      </div>
+
+      <!-- Apps Grid -->
+      <div class="app-grid" id="appGrid">
+        
+        <!-- App 1: AI PDF Master -->
+        <article class="app-card glass glass-interactive" data-category="ai">
+          <div class="app-card-header">
+            <img src="assets/ai-pdf-master.png" alt="AI PDF Master Icon" class="app-icon">
+            <div class="app-meta">
+              <h3 class="app-name">AI PDF Master</h3>
+              <span class="app-category">AI Tools</span>
+            </div>
+          </div>
+          <p class="app-description">A robust and smart PDF assistant that lets you chat directly with documents, edit pages, run advanced OCR text recognition, and convert formats offline using private models.</p>
+          <ul class="app-features-list">
+            <li>Interactive Chat with PDF (Gemini API)</li>
+            <li>High-speed local OCR Scanner</li>
+            <li>Advanced PDF Editor & Conversion</li>
+          </ul>
+          <span class="app-package">com.example.aipdfmaster</span>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.example.aipdfmaster" target="_blank" rel="noopener noreferrer" class="playstore-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 5.277V18.72c0 .907.98 1.48 1.77 1.04l12.38-6.72c.76-.41.76-1.5 0-1.91L4.77 4.23c-.79-.44-1.77.13-1.77 1.047zM17.5 12l4.02-2.18c.64-.35.64-1.28 0-1.63L18 6.28l-.5 5.72z" />
+              </svg>
+              Google Play Link
+            </a>
+            <div class="legal-links">
+              <a href="privacy/ai-pdf-master.html">Privacy Policy</a>
+              <a href="terms/ai-pdf-master.html">Terms of Service</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- App 2: Secret Video Recorder -->
+        <article class="app-card glass glass-interactive" data-category="utilities">
+          <div class="app-card-header">
+            <img src="assets/secret-video-recorder.png" alt="Secret Video Recorder Icon" class="app-icon">
+            <div class="app-meta">
+              <h3 class="app-name">Secret Video Recorder</h3>
+              <span class="app-category">Utilities</span>
+            </div>
+          </div>
+          <p class="app-description">A utility designed for background video recording. Program schedules for specific times, record securely while the screen is black, and manage your vault locally with zero cloud exposure.</p>
+          <ul class="app-features-list">
+            <li>Background Service Camera Recording</li>
+            <li>Integrated Event Alarm & Scheduler</li>
+            <li>Encrypted Local Video Gallery Vault</li>
+          </ul>
+          <span class="app-package">com.camera.secretvideorecorder</span>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.camera.secretvideorecorder" target="_blank" rel="noopener noreferrer" class="playstore-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 5.277V18.72c0 .907.98 1.48 1.77 1.04l12.38-6.72c.76-.41.76-1.5 0-1.91L4.77 4.23c-.79-.44-1.77.13-1.77 1.047zM17.5 12l4.02-2.18c.64-.35.64-1.28 0-1.63L18 6.28l-.5 5.72z" />
+              </svg>
+              Google Play Link
+            </a>
+            <div class="legal-links">
+              <a href="privacy/secret-video-recorder.html">Privacy Policy</a>
+              <a href="terms/secret-video-recorder.html">Terms of Service</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- App 3: VoiceForge AI -->
+        <article class="app-card glass glass-interactive" data-category="ai">
+          <div class="app-card-header">
+            <img src="assets/voiceforge-ai.png" alt="VoiceForge AI Icon" class="app-icon">
+            <div class="app-meta">
+              <h3 class="app-name">VoiceForge AI</h3>
+              <span class="app-category">AI Tools</span>
+            </div>
+          </div>
+          <p class="app-description">An advanced Text-to-Speech (TTS) converter and audiobook creator. Build custom voice clones, manage voice libraries, and listen to documents read aloud in natural neural voices.</p>
+          <ul class="app-features-list">
+            <li>High-Fidelity Neural TTS Voices</li>
+            <li>Custom Audiobook Mode Generator</li>
+            <li>Offline Generation History & Library</li>
+          </ul>
+          <span class="app-package">com.ultraspeakai.maker</span>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.ultraspeakai.maker" target="_blank" rel="noopener noreferrer" class="playstore-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 5.277V18.72c0 .907.98 1.48 1.77 1.04l12.38-6.72c.76-.41.76-1.5 0-1.91L4.77 4.23c-.79-.44-1.77.13-1.77 1.047zM17.5 12l4.02-2.18c.64-.35.64-1.28 0-1.63L18 6.28l-.5 5.72z" />
+              </svg>
+              Google Play Link
+            </a>
+            <div class="legal-links">
+              <a href="privacy/voiceforge-ai.html">Privacy Policy</a>
+              <a href="terms/voiceforge-ai.html">Terms of Service</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- App 4: Free AI Art Generator -->
+        <article class="app-card glass glass-interactive" data-category="creative">
+          <div class="app-card-header">
+            <img src="assets/free-ai-art-generator.png" alt="Free AI Art Generator Icon" class="app-icon">
+            <div class="app-meta">
+              <h3 class="app-name">Free AI Art Generator</h3>
+              <span class="app-category">Creative</span>
+            </div>
+          </div>
+          <p class="app-description">Turn words into breathtaking digital art instantly. Generate unique high-resolution images, explore artistic styles, and export masterpieces with no watermarks and full ownership.</p>
+          <ul class="app-features-list">
+            <li>Fast Text-to-Image Generation</li>
+            <li>Style Library (3D, anime, cinematic)</li>
+            <li>Watermark-free High-resolution exports</li>
+          </ul>
+          <span class="app-package">io.github.ultraspeakaimaker.freeaiartgenerator</span>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=io.github.ultraspeakaimaker.freeaiartgenerator" target="_blank" rel="noopener noreferrer" class="playstore-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 5.277V18.72c0 .907.98 1.48 1.77 1.04l12.38-6.72c.76-.41.76-1.5 0-1.91L4.77 4.23c-.79-.44-1.77.13-1.77 1.047zM17.5 12l4.02-2.18c.64-.35.64-1.28 0-1.63L18 6.28l-.5 5.72z" />
+              </svg>
+              Google Play Link
+            </a>
+            <div class="legal-links">
+              <a href="privacy/free-ai-art-generator.html">Privacy Policy</a>
+              <a href="terms/free-ai-art-generator.html">Terms of Service</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="catalog-section" id="about" style="border-top: 1px solid var(--border-color); background: rgba(17, 22, 40, 0.2);">
+    <div class="container" style="max-width: 900px;">
+      <div class="section-header">
+        <h2 class="section-title">About Vectra Labs</h2>
+        <p class="section-subtitle">Dedicated to creating next-generation, high-performance Android solutions.</p>
+      </div>
+      <div class="glass" style="padding: 3rem; border-radius: 16px; text-align: center;">
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+          At Vectra Labs, we are passionate about building smart Android applications and system tools. Hosted officially under the domain <a href="https://vibhutipandey.in" style="color: var(--secondary); text-decoration: underline;">vibhutipandey.in</a>, our focus is to merge cutting-edge AI processing with lightweight utility frameworks.
+        </p>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+          We adhere strictly to modern privacy practices, prioritizing on-device processing and robust security implementations. When you download a Vectra Labs application, you can rest assured that your personal data is secure, processed locally, and completely under your control.
+        </p>
+        <a href="contact.html" class="cta-button cta-solid">Get Support & Data Deletion Queries</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-link">
+            <img src="assets/logo.png" alt="Vectra Labs Logo" class="logo-img">
+            <div class="logo-text">Vectra <span>Labs</span></div>
+          </a>
+          <p class="footer-desc">Creating modern, reliable, and intelligent Android apps designed for privacy and speed.</p>
+        </div>
+        <div>
+          <h4 class="footer-nav-title">Applications</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#apps" class="footer-link">AI PDF Master</a></li>
+            <li><a href="index.html#apps" class="footer-link">Secret Video Recorder</a></li>
+            <li><a href="index.html#apps" class="footer-link">VoiceForge AI</a></li>
+            <li><a href="index.html#apps" class="footer-link">Free AI Art Generator</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-nav-title">Developer</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html" class="footer-link">Help Desk</a></li>
+            <li><a href="contact.html#deletion" class="footer-link">Data Deletion Request</a></li>
+            <li><a href="mailto:ultraspeakai@gmail.com" class="footer-link">ultraspeakai@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">&copy; 2026 Vectra Labs. Hosted at <a href="https://vibhutipandey.in">vibhutipandey.in</a>. All rights reserved.</div>
+        <div class="footer-legal">Designed for Google Play Console Verification</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Logic -->
+  <script src="js/main.js"></script>
+</body>
+</html>

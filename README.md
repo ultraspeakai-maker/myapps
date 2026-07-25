@@ -13,7 +13,7 @@ Welcome to the official repository for mobile applications built and maintained 
 - **Developer Email:** ultraspeakai@gmail.com
 - **Tech Stack:** Jetpack Compose, CameraX, ExoPlayer, AdMob SDK
 - **Key Features:** Unlimited free background video recording, custom camera source (Front/Back), resolution controls (1080p, 720p, 480p), smart alarm scheduler, disguised notifications, and local gallery player.
-- **Official Privacy Policy URL:** [https://ultraspeakai-maker.github.io/myapps/](https://ultraspeakai-maker.github.io/myapps/)
+- **Official Privacy Policy URL:** [https://ultraspeakai-maker.github.io/myapps/VSpyCamera/privacy_policy.html](https://ultraspeakai-maker.github.io/myapps/VSpyCamera/privacy_policy.html)
 - **Play Store Review Documents:** [PLAYSTORE_LISTING.md](./VSpyCamera/PLAYSTORE_LISTING.md) | [DATA_SAFETY_DECLARATION.md](./VSpyCamera/DATA_SAFETY_DECLARATION.md)
 
 ---
@@ -23,13 +23,13 @@ Welcome to the official repository for mobile applications built and maintained 
 ```text
 myapps/
 ├── README.md                <-- Multi-App Catalog (This File)
-├── index.html               <-- Official Privacy Policy & Support Page (GitHub Pages)
 │
 └── VSpyCamera/              <-- V Spy Camera App Project Directory
     ├── app/                 <-- Android Source Code
     ├── build.gradle.kts     <-- Gradle Build Configuration
     ├── README.md            <-- App Technical Documentation
-    ├── PRIVACY_POLICY.md    <-- Privacy Policy
+    ├── PRIVACY_POLICY.md    <-- Privacy Policy (Markdown)
+    ├── privacy_policy.html  <-- Privacy Policy (HTML for Play Store)
     ├── PLAYSTORE_LISTING.md <-- Store Listing Metadata
     └── DATA_SAFETY_DECLARATION.md
 ```
@@ -39,4 +39,4 @@ myapps/
 ## 🌐 Public Links & Contact
 - **Developer Email:** ultraspeakai@gmail.com
 - **GitHub Repository:** [https://github.com/ultraspeakai-maker/myapps](https://github.com/ultraspeakai-maker/myapps)
-- **Official Privacy Policy Page:** [https://ultraspeakai-maker.github.io/myapps/](https://ultraspeakai-maker.github.io/myapps/)
+- **Official Privacy Policy Page:** [https://ultraspeakai-maker.github.io/myapps/VSpyCamera/privacy_policy.html](https://ultraspeakai-maker.github.io/myapps/VSpyCamera/privacy_policy.html)

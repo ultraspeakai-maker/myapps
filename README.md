@@ -10,10 +10,11 @@ Welcome to the official repository for mobile applications built and maintained 
 - **Folder:** [`/VSpyCamera`](./VSpyCamera)
 - **App Name:** `V Spy Camera - Unlimited Free Recordings`
 - **Package Name:** `com.camera.secretvideorecorder`
+- **Developer Email:** ultraspeakai@gmail.com
 - **Tech Stack:** Jetpack Compose, CameraX, ExoPlayer, AdMob SDK
 - **Key Features:** Unlimited free background video recording, custom camera source (Front/Back), resolution controls (1080p, 720p, 480p), smart alarm scheduler, disguised notifications, and local gallery player.
-- **Privacy Policy:** [PRIVACY_POLICY.md](./VSpyCamera/PRIVACY_POLICY.md) | [Web Page (HTML)](./v_spy_camera_privacy_policy.html)
-- **Play Store Review Package:** [PLAYSTORE_LISTING.md](./VSpyCamera/PLAYSTORE_LISTING.md) | [DATA_SAFETY_DECLARATION.md](./VSpyCamera/DATA_SAFETY_DECLARATION.md)
+- **Official Privacy Policy URL:** [https://ultraspeakai-maker.github.io/myapps/](https://ultraspeakai-maker.github.io/myapps/)
+- **Play Store Review Documents:** [PLAYSTORE_LISTING.md](./VSpyCamera/PLAYSTORE_LISTING.md) | [DATA_SAFETY_DECLARATION.md](./VSpyCamera/DATA_SAFETY_DECLARATION.md)
 
 ---
 
@@ -21,29 +22,21 @@ Welcome to the official repository for mobile applications built and maintained 
 
 ```text
 myapps/
-├── README.md                          <-- Multi-App Catalog (This File)
-├── v_spy_camera_privacy_policy.html   <-- Web-Hosted Privacy Policy
-├── v_spy_camera_privacy_policy.md     <-- Markdown Privacy Policy
+├── README.md                <-- Multi-App Catalog (This File)
+├── index.html               <-- Official Privacy Policy & Support Page (GitHub Pages)
 │
-├── VSpyCamera/                        <-- V Spy Camera App Project
-│   ├── app/                           <-- Android Source Code
-│   ├── build.gradle.kts               <-- Gradle Build Configuration
-│   ├── README.md                      <-- App Technical Documentation
-│   ├── PRIVACY_POLICY.md              <-- Privacy Policy
-│   ├── privacy_policy.html            <-- HTML Privacy Policy
-│   ├── PLAYSTORE_LISTING.md           <-- Store Listing Metadata
-│   └── DATA_SAFETY_DECLARATION.md     <-- Play Console Data Safety Guide
-│
-└── [Future Apps]/                     <-- Future App Projects
+└── VSpyCamera/              <-- V Spy Camera App Project Directory
+    ├── app/                 <-- Android Source Code
+    ├── build.gradle.kts     <-- Gradle Build Configuration
+    ├── README.md            <-- App Technical Documentation
+    ├── PRIVACY_POLICY.md    <-- Privacy Policy
+    ├── PLAYSTORE_LISTING.md <-- Store Listing Metadata
+    └── DATA_SAFETY_DECLARATION.md
 ```
 
 ---
 
-## 🛠️ Adding New Applications
-Future applications can be added by creating a new dedicated directory (e.g. `myapps/NewAppName/`) alongside `VSpyCamera/`.
-
----
-
 ## 🌐 Public Links & Contact
+- **Developer Email:** ultraspeakai@gmail.com
 - **GitHub Repository:** [https://github.com/ultraspeakai-maker/myapps](https://github.com/ultraspeakai-maker/myapps)
-- **GitHub Pages:** [https://ultraspeakai-maker.github.io/myapps/](https://ultraspeakai-maker.github.io/myapps/)
+- **Official Privacy Policy Page:** [https://ultraspeakai-maker.github.io/myapps/](https://ultraspeakai-maker.github.io/myapps/)

@@ -374,6 +374,14 @@ fun SettingsScreen(settingsManager: SettingsManager) {
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
+                Text("Support Email", color = TextSecondary, fontSize = 14.sp)
+                Text("ultraspeakai@gmail.com", color = NeonCyan, fontSize = 14.sp, fontWeight = FontWeight.Bold)
+            }
+            Spacer(modifier = Modifier.height(8.dp))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
                 Text("Recording limit", color = TextSecondary, fontSize = 14.sp)
                 Text("Unlimited (Free)", color = NeonCyan, fontSize = 14.sp, fontWeight = FontWeight.Bold)
             }
@@ -398,9 +406,9 @@ fun SettingsScreen(settingsManager: SettingsManager) {
                                     "- Notifications: Used to keep you informed of active recordings.\n\n" +
                                     "3. Advertising:\n" +
                                     "This free app uses Google AdMob to display banner, app open, and interstitial ads. AdMob may collect standard non-personally identifiable advertising IDs and diagnostic data strictly for ad serving and analytics.\n\n" +
-                                    "4. Open Source & Project Details:\n" +
-                                    "Repository: https://github.com/ultraspeakai-maker/myapps\n\n" +
-                                    "Contact: Support & inquiries available via GitHub repo.",
+                                    "4. Contact & Support:\n" +
+                                    "Email: ultraspeakai@gmail.com\n" +
+                                    "Repository: https://github.com/ultraspeakai-maker/myapps",
                             fontSize = 12.sp,
                             color = TextPrimary
                         )

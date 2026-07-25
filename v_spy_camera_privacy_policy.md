@@ -2,6 +2,7 @@
 
 **Effective Date:** July 25, 2026  
 **App Name:** V Spy Camera - Unlimited Free Recordings  
+**Developer Support Email:** ultraspeakai@gmail.com  
 **Developer Repository:** [https://github.com/ultraspeakai-maker/myapps](https://github.com/ultraspeakai-maker/myapps)  
 
 ---
@@ -65,7 +66,8 @@ We may update our Privacy Policy periodically to reflect app updates or regulato
 ---
 
 ## 8. Contact & Developer Information
-If you have any questions or feedback regarding this Privacy Policy, please reach out via our official GitHub project repository:
+If you have any questions or feedback regarding this Privacy Policy, please reach out directly:
 
+**Support Email:** [ultraspeakai@gmail.com](mailto:ultraspeakai@gmail.com)  
 **Developer Repository:** [https://github.com/ultraspeakai-maker/myapps](https://github.com/ultraspeakai-maker/myapps)  
 **App Package Name:** `com.camera.secretvideorecorder`

@@ -1,256 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vectra Labs | Android Apps & Bots Developer</title>
-  <meta name="description" content="Official website of Vectra Labs, developers of advanced Android applications, utilities, and AI-powered mobile bots.">
-  
-  <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-  
-  <!-- Open Graph Meta Tags (SEO) -->
-  <meta property="og:title" content="Vectra Labs | Android Apps & Bots">
-  <meta property="og:description" content="Discover advanced utilities and next-generation AI tools built for Android by Vectra Labs.">
-  <meta property="og:image" content="assets/logo.png">
-  <meta property="og:url" content="https://ultraspeakai-maker.github.io/myapps/">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - V Spy Camera</title>
+    <style>
+        :root {
+            --bg-color: #0f0e13;
+            --card-bg: #1b1a22;
+            --primary: #9d4edd;
+            --accent: #00f5d4;
+            --text: #ffffff;
+            --text-sub: #9e9eaf;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            border: 1px solid rgba(157, 78, 221, 0.2);
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        .meta {
+            color: var(--text-sub);
+            font-size: 14px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 12px;
+        }
+        h2 {
+            color: var(--accent);
+            font-size: 20px;
+            margin-top: 24px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+        th {
+            color: var(--primary);
+        }
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            padding-left: 20px;
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Navigation Header -->
-  <header class="header">
-    <div class="container header-container">
-      <a href="index.html" class="logo-link">
-        <img src="assets/logo.png" alt="Vectra Labs Logo" class="logo-img">
-        <div class="logo-text">Vectra <span>Labs</span></div>
-      </a>
-      
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">☰</button>
-      
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html#apps" class="nav-link">Our Apps</a></li>
-        <li><a href="index.html#about" class="nav-link">About Us</a></li>
-        <li><a href="contact.html" class="nav-link">Support</a></li>
-        <li><a href="contact.html" class="cta-button cta-outline">Contact</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
     <div class="container">
-      <div class="badge">Official Developer Webpage | <span>GitHub Pages</span></div>
-      <h1 class="hero-title">Intelligent <span>Mobile Apps</span> & Automation Bots</h1>
-      <p class="hero-description">We build premium, privacy-focused Android utilities and AI-powered applications that simplify tasks, spark creativity, and run seamless operations.</p>
-      <div class="hero-actions">
-        <a href="#apps" class="cta-button cta-solid">Browse Apps</a>
-        <a href="contact.html" class="cta-button cta-outline">Get Support</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Apps Catalog Section -->
-  <section class="catalog-section" id="apps">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Our Android Catalog</h2>
-        <p class="section-subtitle">High-quality, secure apps verified and ready for deployment on the Google Play Store.</p>
-      </div>
-
-      <!-- Filter Tabs -->
-      <div class="filter-container">
-        <button class="filter-btn active" data-filter="all">All Applications</button>
-        <button class="filter-btn" data-filter="ai">AI Tools</button>
-        <button class="filter-btn" data-filter="utilities">Utilities</button>
-        <button class="filter-btn" data-filter="creative">Creative</button>
-      </div>
-
-      <!-- Apps Grid -->
-      <div class="app-grid" id="appGrid">
-        
-        <!-- App 1: AI PDF Master -->
-        <article class="app-card glass glass-interactive" data-category="ai">
-          <div class="app-card-header">
-            <img src="assets/ai-pdf-master.png" alt="AI PDF Master Icon" class="app-icon">
-            <div class="app-meta">
-              <h3 class="app-name">AI PDF Master</h3>
-              <span class="app-category">AI Tools</span>
-            </div>
-          </div>
-          <p class="app-description">A robust and smart PDF assistant that lets you chat directly with documents, edit pages, run advanced OCR text recognition, and convert formats offline using private models.</p>
-          <ul class="app-features-list">
-            <li>Interactive Chat with PDF (Gemini API)</li>
-            <li>High-speed local OCR Scanner</li>
-            <li>Advanced PDF Editor & Conversion</li>
-          </ul>
-          <span class="app-package">com.example.aipdfmaster</span>
-          <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=com.example.aipdfmaster" target="_blank" rel="noopener noreferrer" class="playstore-btn">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3 5.277V18.72c0 .907.98 1.48 1.77 1.04l12.38-6.72c.76-.41.76-1.5 0-1.91L4.77 4.23c-.79-.44-1.77.13-1.77 1.047zM17.5 12l4.02-2.18c.64-.35.64-1.28 0-1.63L18 6.28l-.5 5.72z" />
-              </svg>
-              Google Play Link
-            </a>
-            <div class="legal-links">
-              <a href="privacy/ai-pdf-master.html">Privacy Policy</a>
-              <a href="terms/ai-pdf-master.html">Terms of Service</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- App 2: V Spy Camera - Unlimited Free Recordings -->
-        <article class="app-card glass glass-interactive" data-category="utilities">
-          <div class="app-card-header">
-            <img src="assets/v-spy-camera.png" alt="V Spy Camera Icon" class="app-icon">
-            <div class="app-meta">
-              <h3 class="app-name">V Spy Camera</h3>
-              <span class="app-category">Utilities</span>
-            </div>
-          </div>
-          <p class="app-description">High quality background video recorder with unlimited free recording time. Select front/back camera, customize resolution (1080p, 720p, 480p), schedule auto-record sessions, and manage files locally.</p>
-          <ul class="app-features-list">
-            <li>Unlimited Free Background Video Recording</li>
-            <li>Front & Back Camera + Quality Select (1080p/720p/480p)</li>
-            <li>Smart Alarm Scheduler & Custom Disguised Notifications</li>
-          </ul>
-          <span class="app-package">com.camera.secretvideorecorder</span>
-          <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=com.camera.secretvideorecorder" target="_blank" rel="noopener noreferrer" class="playstore-btn">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3 5.277V18.72c0 .907.98 1.48 1.77 1.04l12.38-6.72c.76-.41.76-1.5 0-1.91L4.77 4.23c-.79-.44-1.77.13-1.77 1.047zM17.5 12l4.02-2.18c.64-.35.64-1.28 0-1.63L18 6.28l-.5 5.72z" />
-              </svg>
-              Google Play Link
-            </a>
-            <div class="legal-links">
-              <a href="v_spy_camera_privacy_policy.html">Privacy Policy</a>
-              <a href="v_spy_camera_privacy_policy.html">Terms & Legal</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- App 3: VoiceForge AI -->
-        <article class="app-card glass glass-interactive" data-category="ai">
-          <div class="app-card-header">
-            <img src="assets/voiceforge-ai.png" alt="VoiceForge AI Icon" class="app-icon">
-            <div class="app-meta">
-              <h3 class="app-name">VoiceForge AI</h3>
-              <span class="app-category">AI Tools</span>
-            </div>
-          </div>
-          <p class="app-description">An advanced Text-to-Speech (TTS) converter and audiobook creator. Build custom voice clones, manage voice libraries, and listen to documents read aloud in natural neural voices.</p>
-          <ul class="app-features-list">
-            <li>High-Fidelity Neural TTS Voices</li>
-            <li>Custom Audiobook Mode Generator</li>
-            <li>Offline Generation History & Library</li>
-          </ul>
-          <span class="app-package">com.ultraspeakai.maker</span>
-          <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=com.ultraspeakai.maker" target="_blank" rel="noopener noreferrer" class="playstore-btn">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3 5.277V18.72c0 .907.98 1.48 1.77 1.04l12.38-6.72c.76-.41.76-1.5 0-1.91L4.77 4.23c-.79-.44-1.77.13-1.77 1.047zM17.5 12l4.02-2.18c.64-.35.64-1.28 0-1.63L18 6.28l-.5 5.72z" />
-              </svg>
-              Google Play Link
-            </a>
-            <div class="legal-links">
-              <a href="privacy/voiceforge-ai.html">Privacy Policy</a>
-              <a href="terms/voiceforge-ai.html">Terms of Service</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- App 4: Free AI Art Generator -->
-        <article class="app-card glass glass-interactive" data-category="creative">
-          <div class="app-card-header">
-            <img src="assets/free-ai-art-generator.png" alt="Free AI Art Generator Icon" class="app-icon">
-            <div class="app-meta">
-              <h3 class="app-name">Free AI Art Generator</h3>
-              <span class="app-category">Creative</span>
-            </div>
-          </div>
-          <p class="app-description">Turn words into breathtaking digital art instantly. Generate unique high-resolution images, explore artistic styles, and export masterpieces with no watermarks and full ownership.</p>
-          <ul class="app-features-list">
-            <li>Fast Text-to-Image Generation</li>
-            <li>Style Library (3D, anime, cinematic)</li>
-            <li>Watermark-free High-resolution exports</li>
-          </ul>
-          <span class="app-package">io.github.ultraspeakaimaker.freeaiartgenerator</span>
-          <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=io.github.ultraspeakaimaker.freeaiartgenerator" target="_blank" rel="noopener noreferrer" class="playstore-btn">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3 5.277V18.72c0 .907.98 1.48 1.77 1.04l12.38-6.72c.76-.41.76-1.5 0-1.91L4.77 4.23c-.79-.44-1.77.13-1.77 1.047zM17.5 12l4.02-2.18c.64-.35.64-1.28 0-1.63L18 6.28l-.5 5.72z" />
-              </svg>
-              Google Play Link
-            </a>
-            <div class="legal-links">
-              <a href="privacy/free-ai-art-generator.html">Privacy Policy</a>
-              <a href="terms/free-ai-art-generator.html">Terms of Service</a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- About Us Section -->
-  <section class="catalog-section" id="about" style="border-top: 1px solid var(--border-color); background: rgba(17, 22, 40, 0.2);">
-    <div class="container" style="max-width: 900px;">
-      <div class="section-header">
-        <h2 class="section-title">About Vectra Labs</h2>
-        <p class="section-subtitle">Dedicated to creating next-generation, high-performance Android solutions.</p>
-      </div>
-      <div class="glass" style="padding: 3rem; border-radius: 16px; text-align: center;">
-        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
-          At Vectra Labs, we are passionate about building smart Android applications and system tools. Hosted officially on <a href="https://ultraspeakai-maker.github.io/myapps/" style="color: var(--secondary); text-decoration: underline;">GitHub Pages</a>, our focus is to merge cutting-edge AI processing with lightweight utility frameworks.
-        </p>
-        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
-          We adhere strictly to modern privacy practices, prioritizing on-device processing and robust security implementations. When you download a Vectra Labs application, you can rest assured that your personal data is secure, processed locally, and completely under your control.
-        </p>
-        <a href="contact.html" class="cta-button cta-solid">Get Support & Data Deletion Queries</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo-link">
-            <img src="assets/logo.png" alt="Vectra Labs Logo" class="logo-img">
-            <div class="logo-text">Vectra <span>Labs</span></div>
-          </a>
-          <p class="footer-desc">Creating modern, reliable, and intelligent Android apps designed for privacy and speed.</p>
+        <h1>Privacy Policy</h1>
+        <div class="meta">
+            <strong>App Name:</strong> V Spy Camera - Unlimited Free Recordings<br>
+            <strong>Package Name:</strong> com.camera.secretvideorecorder<br>
+            <strong>Developer Contact:</strong> <a href="mailto:ultraspeakai@gmail.com">ultraspeakai@gmail.com</a><br>
+            <strong>Effective Date:</strong> July 25, 2026<br>
+            <strong>GitHub Repository:</strong> <a href="https://github.com/ultraspeakai-maker/myapps" target="_blank">https://github.com/ultraspeakai-maker/myapps</a>
         </div>
-        <div>
-          <h4 class="footer-nav-title">Applications</h4>
-          <ul class="footer-links">
-            <li><a href="index.html#apps" class="footer-link">AI PDF Master</a></li>
-            <li><a href="index.html#apps" class="footer-link">Secret Video Recorder</a></li>
-            <li><a href="index.html#apps" class="footer-link">VoiceForge AI</a></li>
-            <li><a href="index.html#apps" class="footer-link">Free AI Art Generator</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-nav-title">Developer</h4>
-          <ul class="footer-links">
-            <li><a href="contact.html" class="footer-link">Help Desk</a></li>
-            <li><a href="contact.html#deletion" class="footer-link">Data Deletion Request</a></li>
-            <li><a href="mailto:ultraspeakai@gmail.com" class="footer-link">ultraspeakai@gmail.com</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="footer-copyright">&copy; 2026 Vectra Labs. Hosted on <a href="https://ultraspeakai-maker.github.io/myapps/">GitHub Pages</a>. All rights reserved.</div>
-        <div class="footer-legal">Designed for Google Play Console Verification</div>
-      </div>
-    </div>
-  </footer>
 
-  <!-- JS Logic -->
-  <script src="js/main.js"></script>
+        <h2>1. Overview & Commitment to Privacy</h2>
+        <p><strong>V Spy Camera - Unlimited Free Recordings</strong> ("we", "our", or "the App") is committed to protecting user privacy. All video recordings, captured audio, and generated video thumbnails remain strictly on your local device. No video files or personal data are ever uploaded, transmitted, or stored on external cloud servers.</p>
+
+        <h2>2. Data Collection and Local Storage</h2>
+        <p><strong>Local Media Storage:</strong> All recordings are saved directly into your device's local MediaStore gallery under <code>DCIM/SecretVideoRecorder</code>. The app does not operate any external user database or cloud sync backend.</p>
+        <p><strong>Google AdMob Integration:</strong> The App is provided 100% free with no recording limits, supported by Google AdMob ads. AdMob may collect non-personally identifiable technical advertising IDs and coarse location metrics for ad delivery. Read <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> for more information.</p>
+
+        <h2>3. Device Permissions & Purpose</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Permission</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>CAMERA</code></td>
+                    <td>Record video clips using front or back camera sensors.</td>
+                </tr>
+                <tr>
+                    <td><code>RECORD_AUDIO</code></td>
+                    <td>Record accompanying microphone sound with video clips.</td>
+                </tr>
+                <tr>
+                    <td><code>FOREGROUND_SERVICE</code></td>
+                    <td>Keep active recording sessions running seamlessly in background.</td>
+                </tr>
+                <tr>
+                    <td><code>FOREGROUND_SERVICE_CAMERA / MICROPHONE</code></td>
+                    <td>Android 14+ (API 34) compliance for camera/mic background foreground services.</td>
+                </tr>
+                <tr>
+                    <td><code>POST_NOTIFICATIONS</code></td>
+                    <td>Display ongoing recording notification status in drawer.</td>
+                </tr>
+                <tr>
+                    <td><code>RECEIVE_BOOT_COMPLETED</code></td>
+                    <td>Reschedule user's custom recording alarms after system reboot.</td>
+                </tr>
+                <tr>
+                    <td><code>VIBRATE</code></td>
+                    <td>Provide optional haptic start/stop feedback.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>4. User Rights & Developer Contact</h2>
+        <p>You have full control over your recorded media. You can view, share, or delete any recorded files at any time inside the app gallery or via your device file manager.</p>
+        <p><strong>Developer Email Support:</strong> <a href="mailto:ultraspeakai@gmail.com">ultraspeakai@gmail.com</a></p>
+        <p><strong>Official Repository:</strong> <a href="https://github.com/ultraspeakai-maker/myapps" target="_blank">https://github.com/ultraspeakai-maker/myapps</a></p>
+    </div>
 </body>
 </html>

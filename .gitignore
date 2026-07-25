@@ -14,3 +14,13 @@ Thumbs.db
 .externalNativeBuild
 .cxx
 local.properties
+
+# Ignore Android Source Code & Build Files from GitHub to Protect Intellectual Property
+VSpyCamera/app/
+VSpyCamera/gradle/
+VSpyCamera/*.kts
+VSpyCamera/gradlew*
+VSpyCamera/gradle.properties
+VSpyCamera/local.properties
+VSpyCamera/.idea/
+VSpyCamera/build/

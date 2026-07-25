@@ -24,10 +24,8 @@ Welcome to the official repository for mobile applications built and maintained 
 myapps/
 ├── README.md                <-- Multi-App Catalog (This File)
 │
-└── VSpyCamera/              <-- V Spy Camera App Project Directory
-    ├── app/                 <-- Android Source Code
-    ├── build.gradle.kts     <-- Gradle Build Configuration
-    ├── README.md            <-- App Technical Documentation
+└── VSpyCamera/              <-- V Spy Camera App Directory
+    ├── README.md            <-- App Technical Overview
     ├── PRIVACY_POLICY.md    <-- Privacy Policy (Markdown)
     ├── privacy_policy.html  <-- Privacy Policy (HTML for Play Store)
     ├── PLAYSTORE_LISTING.md <-- Store Listing Metadata

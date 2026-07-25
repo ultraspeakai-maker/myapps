@@ -1,7 +1,5 @@
 # V Spy Camera - Unlimited Free Recordings 🎥
 
-![App Icon](app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
-
 A modern, high-performance Android background video recorder application built with **Jetpack Compose**, **CameraX**, **AdMob SDK**, and **Media3 ExoPlayer**. Record high-quality videos in the background with **unlimited free recording time**, customizable resolution options (Highest, 1080p, 720p, 480p), front/back camera toggles, smart alarm scheduler, and custom disguised notifications.
 
 ---
@@ -33,7 +31,7 @@ A modern, high-performance Android background video recorder application built w
 
 ## 📄 Play Store Compliance & Reviewer Documents
 
-This repository contains all documentation required for **Google Play Store submission and review approval**:
+This directory contains all documentation required for **Google Play Store submission and review approval**:
 
 - 📜 [**PRIVACY_POLICY.md**](./PRIVACY_POLICY.md) - Official Privacy Policy document.
 - 🌐 [**privacy_policy.html**](./privacy_policy.html) - Production HTML Privacy Policy (ready for GitHub Pages).
@@ -42,33 +40,8 @@ This repository contains all documentation required for **Google Play Store subm
 
 ---
 
-## 🛠️ How to Build & Run
+## 🌐 Public Links & Contact
 
-### Prerequisites
-- Android Studio Ladybug / Jellyfish or newer
-- JDK 17+
-- Android SDK 34
-
-### Building via Command Line
-```bash
-# Clone the repository
-git clone https://github.com/ultraspeakai-maker/myapps.git
-cd myapps
-
-# Build Debug APK
-./gradlew assembleDebug
-
-# Build Production Release Bundle (AAB) for Play Store
-./gradlew bundleRelease
-```
-
-The compiled Debug APK will be generated at:  
-`app/build/outputs/apk/debug/app-debug.apk`
-
----
-
-## 🌐 Public Repository & Contact
-
+- **Developer Support Email:** ultraspeakai@gmail.com
 - **GitHub Repository:** [https://github.com/ultraspeakai-maker/myapps](https://github.com/ultraspeakai-maker/myapps)
 - **Application Package ID:** `com.camera.secretvideorecorder`
-- **License:** Open Source / Commercial Play Store Distribution Ready

@@ -57,6 +57,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.camera.secretvideorecorder.SettingsManager
 import com.camera.secretvideorecorder.theme.BrightPink
+import com.camera.secretvideorecorder.theme.GlassySurface
 import com.camera.secretvideorecorder.theme.NeonCyan
 import com.camera.secretvideorecorder.theme.NeonPurple
 import com.camera.secretvideorecorder.theme.TextPrimary

@@ -1,0 +1,8 @@
+# Ignore local build artifacts and IDE cache while keeping documentation tracking active
+.idea/
+.gradle/
+build/
+app/
+*.apk
+*.aab
+local.properties

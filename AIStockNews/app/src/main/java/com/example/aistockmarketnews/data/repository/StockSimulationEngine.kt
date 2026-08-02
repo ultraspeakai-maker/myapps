@@ -342,6 +342,63 @@ object StockSimulationEngine {
         return generateNews()
     }
 
+    fun getUpcomingDividends(): List<DividendRecord> {
+        return generateUpcomingDividends()
+    }
+
+    private fun generateUpcomingDividends(): List<DividendRecord> {
+        val list = mutableListOf<DividendRecord>()
+        val types = listOf("Final Dividend", "Interim Dividend", "Special Dividend")
+        val dateFormat = java.text.SimpleDateFormat("dd MMM yyyy", java.util.Locale.getDefault())
+        val baseCal = java.util.Calendar.getInstance()
+
+        val selectedStocks = STOCKS.take(40)
+        selectedStocks.forEachIndexed { index, stock ->
+            val rand = Random(stock.symbol.hashCode() + (System.currentTimeMillis() / (1000 * 60 * 60)).toInt())
+            val daysAhead = (index % 18) + 1
+            
+            val exCal = baseCal.clone() as java.util.Calendar
+            exCal.add(java.util.Calendar.DAY_OF_MONTH, daysAhead)
+            val exDateStr = dateFormat.format(exCal.time)
+            
+            val recordCal = exCal.clone() as java.util.Calendar
+            recordCal.add(java.util.Calendar.DAY_OF_MONTH, 1)
+            val recordDateStr = dateFormat.format(recordCal.time)
+            
+            val divType = types[rand.nextInt(types.size)]
+            val divAmount = when {
+                stock.currentPrice > 3000 -> Math.round((rand.nextDouble() * 35.0 + 15.0) * 100.0) / 100.0
+                stock.currentPrice > 1000 -> Math.round((rand.nextDouble() * 18.0 + 8.0) * 100.0) / 100.0
+                else -> Math.round((rand.nextDouble() * 8.0 + 2.0) * 100.0) / 100.0
+            }
+            val yieldPct = String.format(java.util.Locale.US, "%.1f", (divAmount / stock.currentPrice) * 100)
+            
+            val aiInsight = when (divType) {
+                "Final Dividend" -> "FY26 Final Dividend payout • Yield ~${yieldPct}%"
+                "Interim Dividend" -> "Q2 Interim Dividend payout • Cash rich balance sheet"
+                else -> "Special Dividend disclosure • Robust operational cashflows"
+            }
+
+            val curPrice = activePrices[stock.symbol] ?: stock.currentPrice
+
+            list.add(DividendRecord(
+                id = "${stock.symbol}_div_$index",
+                stockSymbol = stock.symbol,
+                stockName = stock.name,
+                exDate = exDateStr,
+                exDateMillis = exCal.timeInMillis,
+                recordDate = recordDateStr,
+                dividendAmount = divAmount,
+                dividendType = divType,
+                currentPrice = curPrice,
+                changePercent = stock.changePercent,
+                aiInsight = aiInsight
+            ))
+        }
+
+        return list.sortedBy { it.exDateMillis }
+    }
+
     // Get institutional / Smart Money tracking information
     private fun generateSmartMoneyRecords(): List<SmartMoneyRecord> {
         val list = mutableListOf<SmartMoneyRecord>()

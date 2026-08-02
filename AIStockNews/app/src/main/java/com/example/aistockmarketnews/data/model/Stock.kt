@@ -106,3 +106,18 @@ data class IntradayItem(
     val trendFullDayDesc: String = "Full Day Trend",
     val probFullDay: Int = 80
 )
+
+@Serializable
+data class DividendRecord(
+    val id: String,
+    val stockSymbol: String,
+    val stockName: String,
+    val exDate: String,
+    val exDateMillis: Long,
+    val recordDate: String,
+    val dividendAmount: Double,
+    val dividendType: String,
+    val currentPrice: Double,
+    val changePercent: Double,
+    val aiInsight: String
+)

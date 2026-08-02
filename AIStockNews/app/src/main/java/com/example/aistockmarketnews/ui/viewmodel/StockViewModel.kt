@@ -81,6 +81,9 @@ class StockViewModel(application: Application) : AndroidViewModel(application) {
     private val _smartMoney = MutableStateFlow<List<SmartMoneyRecord>>(StockSimulationEngine.getSmartMoneyRecords())
     val smartMoney: StateFlow<List<SmartMoneyRecord>> = _smartMoney.asStateFlow()
 
+    private val _dividends = MutableStateFlow<List<DividendRecord>>(StockSimulationEngine.getUpcomingDividends())
+    val dividends: StateFlow<List<DividendRecord>> = _dividends.asStateFlow()
+
     // Flash states: maps symbol -> positive (true) or negative (false) price flash
     private val _priceFlashes = MutableStateFlow<Map<String, Boolean>>(emptyMap())
     val priceFlashes: StateFlow<Map<String, Boolean>> = _priceFlashes.asStateFlow()
@@ -182,6 +185,9 @@ class StockViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch(Dispatchers.Default) {
             _isRefreshing.value = true
             syncAllPricesWithYahooFinance()
+            _smartMoney.value = StockSimulationEngine.getSmartMoneyRecords()
+            _news.value = StockSimulationEngine.getNews()
+            _dividends.value = StockSimulationEngine.getUpcomingDividends()
             delay(400)
             _isRefreshing.value = false
         }

@@ -1,5 +1,7 @@
 package com.example.aistockmarketnews.ui.screens
 
+import com.example.aistockmarketnews.data.model.DividendRecord
+
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.platform.LocalContext
@@ -58,9 +60,21 @@ fun HomeScreen(
     var showPrivacyPolicyDialog by remember { mutableStateOf(false) }
     var showContactUsDialog by remember { mutableStateOf(false) }
 
-    // Main 3-Tab state
+    // Main 4-Tab state
     var selectedMainTab by rememberSaveable { mutableStateOf(0) }
-    val mainTabs = listOf("Smart Money", "Market News", "Search Stocks")
+    val mainTabs = listOf("Smart Money", "Market News", "Upcoming Dividends", "Search Stocks")
+
+    // Tab 2 Filter: Upcoming Dividends
+    val dividends by viewModel.dividends.collectAsState()
+    var dividendSearchQuery by rememberSaveable { mutableStateOf("") }
+    val filteredDividends = remember(dividends, dividendSearchQuery) {
+        if (dividendSearchQuery.isBlank()) dividends
+        else dividends.filter { record ->
+            record.stockSymbol.contains(dividendSearchQuery, ignoreCase = true) ||
+            record.stockName.contains(dividendSearchQuery, ignoreCase = true) ||
+            record.dividendType.contains(dividendSearchQuery, ignoreCase = true)
+        }
+    }
 
     // Tab 0 Filter: Smart Money
     var selectedSmartMoneyFilter by rememberSaveable { mutableStateOf("All") }
@@ -531,8 +545,79 @@ fun HomeScreen(
                     }
                 }
 
-                // TAB 2: SEARCH STOCKS & STOCK DIRECTORY
+                // TAB 2: UPCOMING DIVIDENDS
                 2 -> {
+                    Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                        // Dividend Search Bar
+                        OutlinedTextField(
+                            value = dividendSearchQuery,
+                            onValueChange = { dividendSearchQuery = it },
+                            placeholder = { Text("Search upcoming dividend stocks...") },
+                            leadingIcon = { Icon(Icons.Default.Search, contentDescription = "Search Dividends") },
+                            trailingIcon = {
+                                if (dividendSearchQuery.isNotEmpty()) {
+                                    IconButton(onClick = { dividendSearchQuery = "" }) {
+                                        Icon(Icons.Default.Close, contentDescription = "Clear")
+                                    }
+                                }
+                            },
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
+                            keyboardActions = KeyboardActions(onSearch = { focusManager.clearFocus() }),
+                            modifier = Modifier.fillMaxWidth(),
+                            shape = MaterialTheme.shapes.medium
+                        )
+
+                        // Dividend Info Banner
+                        Card(
+                            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.15f)),
+                            shape = MaterialTheme.shapes.medium
+                        ) {
+                            Row(
+                                modifier = Modifier.padding(12.dp),
+                                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.CurrencyRupee,
+                                    contentDescription = "Upcoming Dividends",
+                                    tint = MaterialTheme.colorScheme.primary
+                                )
+                                Text(
+                                    text = "AI tracks corporate disclosures and lists upcoming dividend ex-dates sorted chronologically with nearest ex-dates first.",
+                                    fontSize = 11.sp,
+                                    lineHeight = 15.sp,
+                                    color = MaterialTheme.colorScheme.onPrimaryContainer
+                                )
+                            }
+                        }
+
+                        // Dividend List
+                        if (filteredDividends.isEmpty()) {
+                            Box(
+                                modifier = Modifier.fillMaxSize(),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text("No upcoming dividends matched your search.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            }
+                        } else {
+                            LazyColumn(
+                                verticalArrangement = Arrangement.spacedBy(10.dp),
+                                modifier = Modifier.fillMaxSize()
+                            ) {
+                                items(filteredDividends) { dividend ->
+                                    DividendCard(
+                                        dividend = dividend,
+                                        onClick = { onNavigate(dividend.stockSymbol) }
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // TAB 3: SEARCH STOCKS & STOCK DIRECTORY
+                3 -> {
                     Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
                         // Search Input TextField
                         OutlinedTextField(
@@ -852,4 +937,116 @@ fun ContactUsDialog(onDismiss: () -> Unit) {
             }
         }
     )
+}
+
+
+@Composable
+fun DividendCard(
+    dividend: DividendRecord,
+    onClick: () -> Unit
+) {
+    Card(
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.35f)),
+        shape = MaterialTheme.shapes.medium,
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onClick)
+    ) {
+        Column(modifier = Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            // Header Row: Symbol, Name, Current Price & Change %
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(dividend.stockSymbol, fontWeight = FontWeight.Bold, style = MaterialTheme.typography.titleMedium)
+                    Text(dividend.stockName, fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                }
+                Column(horizontalAlignment = Alignment.End) {
+                    Text("₹${String.format(Locale.US, "%.2f", dividend.currentPrice)}", fontWeight = FontWeight.Bold, fontSize = 13.sp)
+                    val changeSign = if (dividend.changePercent >= 0) "+" else ""
+                    Text(
+                        "$changeSign${String.format(Locale.US, "%.2f", dividend.changePercent)}%",
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = if (dividend.changePercent >= 0) ColorUp else ColorDown
+                    )
+                }
+            }
+
+            HorizontalDivider(color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.08f))
+
+            // Main Info Badges: Ex-Date and Dividend Amount
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                // Ex-Date Highlight Badge
+                Surface(
+                    color = MaterialTheme.colorScheme.primaryContainer,
+                    shape = MaterialTheme.shapes.small
+                ) {
+                    Row(
+                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                        horizontalArrangement = Arrangement.spacedBy(4.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(Icons.Default.Event, contentDescription = "Ex-Date", tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(14.dp))
+                        Text(
+                            text = "Ex-Date: ${dividend.exDate}",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 11.sp,
+                            color = MaterialTheme.colorScheme.onPrimaryContainer
+                        )
+                    }
+                }
+
+                // Dividend Amount Badge
+                Surface(
+                    color = Color(0xFF10B981).copy(alpha = 0.15f),
+                    shape = MaterialTheme.shapes.small
+                ) {
+                    Text(
+                        text = "₹${String.format(Locale.US, "%.2f", dividend.dividendAmount)} / Share",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 12.sp,
+                        color = Color(0xFF10B981),
+                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+                    )
+                }
+            }
+
+            // Sub Details: Record Date & Type
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text("Record Date: ${dividend.recordDate}", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Text(dividend.dividendType, fontSize = 11.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+            }
+
+            // AI Insight Line
+            Surface(
+                color = MaterialTheme.colorScheme.surface,
+                shape = MaterialTheme.shapes.small,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Row(
+                    modifier = Modifier.padding(8.dp),
+                    horizontalArrangement = Arrangement.spacedBy(6.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(Icons.Default.AutoAwesome, contentDescription = "AI Insight", tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(13.dp))
+                    Text(
+                        text = dividend.aiInsight,
+                        fontSize = 10.5.sp,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                }
+            }
+        }
+    }
 }

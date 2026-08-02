@@ -1,0 +1,66 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Trend line glow aura -->
+    <path
+        android:strokeWidth="8"
+        android:strokeColor="#2200FF66"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M22,78 L44,60 L62,66 L86,30" />
+
+    <!-- Upward Trend line (Deep Neon Green to Cyan) -->
+    <path
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M22,78 L44,60 L62,66 L86,30">
+        <aapt:attr name="android:strokeColor">
+            <gradient
+                android:startX="22"
+                android:startY="78"
+                android:endX="86"
+                android:endY="30"
+                android:type="linear">
+                <item android:color="#00E676" android:offset="0.0" />
+                <item android:color="#00E5FF" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Breakout Arrow Head pointing top-right -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M86,30 L72,32 L81,41 Z" />
+
+    <!-- AI Node Core (Pulse) at peak -->
+    <!-- Outer ring -->
+    <path
+        android:fillColor="#2200E5FF"
+        android:pathData="M86,30 m -8,0 a 8,8 0 1,0 16,0 a 8,8 0 1,0 -16,0" />
+    <!-- Inner core -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M86,30 m -4,0 a 4,4 0 1,0 8,0 a 4,4 0 1,0 -8,0" />
+
+    <!-- Interactive bar elements below chart -->
+    <path
+        android:fillColor="#FF1744"
+        android:pathData="M26,86h4v10h-4z" />
+    <path
+        android:fillColor="#00E676"
+        android:pathData="M38,82h4v14h-4z" />
+    <path
+        android:fillColor="#00E676"
+        android:pathData="M50,74h4v22h-4z" />
+    <path
+        android:fillColor="#FF1744"
+        android:pathData="M62,80h4v16h-4z" />
+    <path
+        android:fillColor="#00E676"
+        android:pathData="M74,68h4v28h-4z" />
+</vector>

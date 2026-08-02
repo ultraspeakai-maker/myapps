@@ -1,7 +1,8 @@
-# Google Play Store Listing Metadata - PDF Editor Master
-
 ## App Name
 **PDF Editor Master**
+
+## Package Name
+`com.ultraspeakai.pdfeditormaster`
 
 ## Short Description (80 characters max)
 Edit PDF text, perform 10-lang OCR, merge, split & chat with documents on-device!

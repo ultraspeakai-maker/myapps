@@ -21,7 +21,7 @@ Welcome to the official repository for mobile applications built and maintained 
 ### 2. 📄 PDF Editor Master - Smart On-Device PDF Suite
 - **Folder:** [`/PdfEditorMaster`](./PdfEditorMaster)
 - **App Name:** `PDF Editor Master`
-- **Package Name:** `com.example.aipdfmaster`
+- **Package Name:** `com.ultraspeakai.pdfeditormaster`
 - **Developer Email:** ultraspeakai@gmail.com
 - **Tech Stack:** Jetpack Compose, Apache PDFBox, Google ML Kit OCR, Tesseract, Gemini AI, AdMob SDK
 - **Key Features:** Interactive on-device PDF text editor, 10-language OCR text extraction, 21+ PDF converter utilities (Merge, Split, Compress, Rotate, Watermark), AI document chat & summarization, and local file privacy.

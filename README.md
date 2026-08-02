@@ -30,6 +30,18 @@ Welcome to the official repository for mobile applications built and maintained 
 
 ---
 
+### 3. 📈 AI Stock News - Real-Time Indian Market News & Institutional Tracking
+- **Folder:** [`/AIStockNews`](./AIStockNews)
+- **App Name:** `AI Stock News`
+- **Package Name:** `com.example.aistockmarketnews`
+- **Developer Email:** ultraspeakai@gmail.com
+- **Tech Stack:** Jetpack Compose, Material 3, StateFlow, Coroutines, Yahoo Finance Live Sync, AdMob SDK
+- **Key Features:** Real-time Indian stock market intelligence, institutional Smart Money tracking (Mutual Funds, FIIs, DIIs, Promoters, Large Investors), AI Market News with sentiment indicators, Upcoming Dividends directory sorted chronologically by nearest ex-date, live stock search, 1-minute background auto-refreshes, sticky bottom-bar banner ads, and non-SEBI registered disclaimer.
+- **Official Privacy Policy URL:** [https://ultraspeakai-maker.github.io/myapps/AIStockNews/privacy_policy.html](https://ultraspeakai-maker.github.io/myapps/AIStockNews/privacy_policy.html)
+- **Play Store Review Documents:** [PLAYSTORE_LISTING.md](./AIStockNews/PLAYSTORE_LISTING.md) | [DATA_SAFETY_DECLARATION.md](./AIStockNews/DATA_SAFETY_DECLARATION.md)
+
+---
+
 ## 📂 Repository Structure
 
 ```text
@@ -43,7 +55,14 @@ myapps/
 │   ├── PLAYSTORE_LISTING.md <-- Store Listing Metadata
 │   └── DATA_SAFETY_DECLARATION.md
 │
-└── PdfEditorMaster/         <-- PDF Editor Master App Directory
+├── PdfEditorMaster/         <-- PDF Editor Master App Directory
+│   ├── README.md            <-- App Technical Overview
+│   ├── PRIVACY_POLICY.md    <-- Privacy Policy (Markdown)
+│   ├── privacy_policy.html  <-- Privacy Policy (HTML for Play Store)
+│   ├── PLAYSTORE_LISTING.md <-- Store Listing Metadata
+│   └── DATA_SAFETY_DECLARATION.md
+│
+└── AIStockNews/             <-- AI Stock News App Directory
     ├── README.md            <-- App Technical Overview
     ├── PRIVACY_POLICY.md    <-- Privacy Policy (Markdown)
     ├── privacy_policy.html  <-- Privacy Policy (HTML for Play Store)
@@ -58,3 +77,4 @@ myapps/
 - **GitHub Repository:** [https://github.com/ultraspeakai-maker/myapps](https://github.com/ultraspeakai-maker/myapps)
 - **V Spy Camera Privacy Policy:** [https://ultraspeakai-maker.github.io/myapps/VSpyCamera/privacy_policy.html](https://ultraspeakai-maker.github.io/myapps/VSpyCamera/privacy_policy.html)
 - **PDF Editor Master Privacy Policy:** [https://ultraspeakai-maker.github.io/myapps/PdfEditorMaster/privacy_policy.html](https://ultraspeakai-maker.github.io/myapps/PdfEditorMaster/privacy_policy.html)
+- **AI Stock News Privacy Policy:** [https://ultraspeakai-maker.github.io/myapps/AIStockNews/privacy_policy.html](https://ultraspeakai-maker.github.io/myapps/AIStockNews/privacy_policy.html)

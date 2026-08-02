@@ -1,5 +1,11 @@
 package com.example.aistockmarketnews.ui.screens
 
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.ui.platform.LocalContext
+import android.content.Intent
+import android.net.Uri
+
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -47,6 +53,10 @@ fun HomeScreen(
     val news by viewModel.news.collectAsState()
     val isRefreshing by viewModel.isRefreshing.collectAsState()
     val focusManager = LocalFocusManager.current
+    val context = LocalContext.current
+    var showProfileMenu by remember { mutableStateOf(false) }
+    var showPrivacyPolicyDialog by remember { mutableStateOf(false) }
+    var showContactUsDialog by remember { mutableStateOf(false) }
 
     // Main 3-Tab state
     var selectedMainTab by rememberSaveable { mutableStateOf(0) }
@@ -181,8 +191,8 @@ fun HomeScreen(
                     }
                 }
 
-                // Action buttons: Refresh & AI Icon
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                // Action buttons: Refresh & Profile Icon
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
                     IconButton(
                         onClick = { viewModel.refreshLiveData() },
                         modifier = Modifier
@@ -199,16 +209,43 @@ fun HomeScreen(
                         )
                     }
 
-                    Surface(
-                        shape = MaterialTheme.shapes.medium,
-                        color = MaterialTheme.colorScheme.primaryContainer,
-                        modifier = Modifier.size(42.dp)
-                    ) {
-                        Box(contentAlignment = Alignment.Center) {
+                    // Profile Icon Button & Dropdown Menu
+                    Box {
+                        IconButton(
+                            onClick = { showProfileMenu = true },
+                            modifier = Modifier
+                                .size(42.dp)
+                                .background(
+                                    MaterialTheme.colorScheme.primaryContainer,
+                                    shape = MaterialTheme.shapes.medium
+                                )
+                        ) {
                             Icon(
-                                imageVector = Icons.Default.AutoAwesome,
-                                contentDescription = "AI",
+                                imageVector = Icons.Default.Person,
+                                contentDescription = "Profile & Settings",
                                 tint = MaterialTheme.colorScheme.onPrimaryContainer
+                            )
+                        }
+
+                        DropdownMenu(
+                            expanded = showProfileMenu,
+                            onDismissRequest = { showProfileMenu = false }
+                        ) {
+                            DropdownMenuItem(
+                                text = { Text("Privacy Policy", fontWeight = FontWeight.Bold) },
+                                leadingIcon = { Icon(Icons.Default.Lock, contentDescription = "Privacy Policy") },
+                                onClick = {
+                                    showProfileMenu = false
+                                    showPrivacyPolicyDialog = true
+                                }
+                            )
+                            DropdownMenuItem(
+                                text = { Text("Contact Us", fontWeight = FontWeight.Bold) },
+                                leadingIcon = { Icon(Icons.Default.Email, contentDescription = "Contact Us") },
+                                onClick = {
+                                    showProfileMenu = false
+                                    showContactUsDialog = true
+                                }
                             )
                         }
                     }
@@ -541,18 +578,24 @@ fun HomeScreen(
                                         flashDirection = priceFlashes[stock.symbol],
                                         onClick = { onNavigate(stock.symbol) }
                                     )
+                                }
                             }
                         }
                     }
                 }
             }
         }
+    }
 
-        }
+    if (showPrivacyPolicyDialog) {
+        PrivacyPolicyDialog(onDismiss = { showPrivacyPolicyDialog = false })
+    }
+
+    if (showContactUsDialog) {
+        ContactUsDialog(onDismiss = { showContactUsDialog = false })
     }
 }
 }
-
 
 @Composable
 fun StockRowItem(
@@ -664,4 +707,149 @@ fun AnalyticsShortcutCard(
             }
         }
     }
+}
+
+
+@Composable
+fun PrivacyPolicyDialog(onDismiss: () -> Unit) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        icon = { Icon(Icons.Default.Lock, contentDescription = "Privacy Policy", tint = MaterialTheme.colorScheme.primary) },
+        title = { Text("Privacy Policy", fontWeight = FontWeight.Bold) },
+        text = {
+            Column(
+                verticalArrangement = Arrangement.spacedBy(10.dp),
+                modifier = Modifier.verticalScroll(rememberScrollState())
+            ) {
+                Text(
+                    text = "Effective Date: August 2, 2026",
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.primary
+                )
+                Text(
+                    text = "AI Stock News is a privacy-first Indian stock market news and institutional tracking application. We respect your privacy and process all preferences locally on your device.",
+                    fontSize = 13.sp
+                )
+                HorizontalDivider()
+                Text(
+                    text = "1. Data Collection & Privacy",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 13.sp
+                )
+                Text(
+                    text = "We DO NOT collect, store, share, or sell any personal data such as names, email addresses, phone numbers, or contacts. No account registration or login is required.",
+                    fontSize = 12.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    text = "2. Advertising (Google AdMob)",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 13.sp
+                )
+                Text(
+                    text = "We use Google Mobile Ads (AdMob) to display non-intrusive banner and app open ads. AdMob may process anonymized device identifiers (such as Advertising ID) for ad delivery and telemetry.",
+                    fontSize = 12.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    text = "3. Important Non-SEBI Disclaimer",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 13.sp
+                )
+                Text(
+                    text = "AI Stock News is strictly an informational tool. We are NOT registered with SEBI. Data is compiled from open public sources. Please conduct independent research.",
+                    fontSize = 12.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    text = "Developer Contact: ultraspeakai@gmail.com",
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = onDismiss) {
+                Text("CLOSE", fontWeight = FontWeight.Bold)
+            }
+        }
+    )
+}
+
+@Composable
+fun ContactUsDialog(onDismiss: () -> Unit) {
+    val context = LocalContext.current
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        icon = { Icon(Icons.Default.Email, contentDescription = "Contact Us", tint = MaterialTheme.colorScheme.primary) },
+        title = { Text("Contact Support", fontWeight = FontWeight.Bold) },
+        text = {
+            Column(
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(
+                    text = "AI Stock News Support",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 15.sp,
+                    color = MaterialTheme.colorScheme.primary
+                )
+                Text(
+                    text = "Have questions, feedback, or need help with AI Stock News? Reach out to our developer support team directly.",
+                    fontSize = 13.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Surface(
+                    color = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.3f),
+                    shape = MaterialTheme.shapes.medium,
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
+                ) {
+                    Column(
+                        modifier = Modifier.padding(12.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(
+                            text = "Developer Support Email",
+                            fontSize = 11.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                        Text(
+                            text = "ultraspeakai@gmail.com",
+                            fontSize = 14.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            Button(
+                onClick = {
+                    try {
+                        val intent = Intent(Intent.ACTION_SENDTO).apply {
+                            data = Uri.parse("mailto:ultraspeakai@gmail.com")
+                            putExtra(Intent.EXTRA_SUBJECT, "AI Stock News - Support Request")
+                        }
+                        context.startActivity(intent)
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
+                    onDismiss()
+                }
+            ) {
+                Row(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalAlignment = Alignment.CenterVertically) {
+                    Icon(Icons.Default.Email, contentDescription = null, modifier = Modifier.size(16.dp))
+                    Text("SEND EMAIL")
+                }
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text("CANCEL")
+            }
+        }
+    )
 }

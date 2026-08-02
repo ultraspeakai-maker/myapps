@@ -354,7 +354,7 @@ object StockSimulationEngine {
 
         val selectedStocks = STOCKS.take(40)
         selectedStocks.forEachIndexed { index, stock ->
-            val rand = Random(stock.symbol.hashCode() + (System.currentTimeMillis() / (1000 * 60 * 60)).toInt())
+            val rand = Random(stock.symbol.hashCode() + (System.currentTimeMillis() / 60000L).toInt())
             val daysAhead = (index % 18) + 1
             
             val exCal = baseCal.clone() as java.util.Calendar
@@ -411,7 +411,7 @@ object StockSimulationEngine {
         val currentCal = java.util.Calendar.getInstance()
 
         STOCKS.forEachIndexed { index, stock ->
-            val rand = Random(stock.symbol.hashCode() + (System.currentTimeMillis() / (1000 * 60 * 15)).toInt())
+            val rand = Random(stock.symbol.hashCode() + (System.currentTimeMillis() / 60000L).toInt())
             val recordsCount = rand.nextInt(2, 4)
             for (i in 0 until recordsCount) {
                 val type = types[rand.nextInt(types.size)]
@@ -464,7 +464,7 @@ object StockSimulationEngine {
         val currentMinute = ((System.currentTimeMillis() / 60000) % 60).toInt()
 
         STOCKS.forEachIndexed { index, stock ->
-            val rand = Random(stock.symbol.hashCode() + (System.currentTimeMillis() / (1000 * 60)).toInt())
+            val rand = Random(stock.symbol.hashCode() + (System.currentTimeMillis() / 60000L).toInt())
             val headlinePair = headlines[rand.nextInt(headlines.size)]
             val score = if (headlinePair.second == "Positive") 65.0 + rand.nextDouble() * 30 
                         else if (headlinePair.second == "Negative") 10.0 + rand.nextDouble() * 30 

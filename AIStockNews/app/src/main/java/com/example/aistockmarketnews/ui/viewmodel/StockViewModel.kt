@@ -150,10 +150,12 @@ class StockViewModel(application: Application) : AndroidViewModel(application) {
     private fun startOneMinuteAutoRefreshLoop() {
         viewModelScope.launch(Dispatchers.IO) {
             while (true) {
-                delay(60_000L) // Refresh every 1 minute (60 seconds)
+                delay(60_000L) // Refresh every 60 seconds continuously
                 if (_isConnected.value) {
                     syncAllPricesWithYahooFinance()
+                    _smartMoney.value = StockSimulationEngine.getSmartMoneyRecords()
                     _news.value = StockSimulationEngine.getNews()
+                    _dividends.value = StockSimulationEngine.getUpcomingDividends()
                 }
             }
         }

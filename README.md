@@ -33,7 +33,7 @@ Welcome to the official repository for mobile applications built and maintained 
 ### 3. 📈 AI Stock News - Real-Time Indian Market News & Institutional Tracking
 - **Folder:** [`/AIStockNews`](./AIStockNews)
 - **App Name:** `AI Stock News`
-- **Package Name:** `com.example.aistockmarketnews`
+- **Package Name:** `com.ultraspeakai.aistocknews`
 - **Developer Email:** ultraspeakai@gmail.com
 - **Tech Stack:** Jetpack Compose, Material 3, StateFlow, Coroutines, Yahoo Finance Live Sync, AdMob SDK
 - **Key Features:** Real-time Indian stock market intelligence, institutional Smart Money tracking (Mutual Funds, FIIs, DIIs, Promoters, Large Investors), AI Market News with sentiment indicators, Upcoming Dividends directory sorted chronologically by nearest ex-date, live stock search, 1-minute background auto-refreshes, sticky bottom-bar banner ads, and non-SEBI registered disclaimer.

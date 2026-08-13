@@ -46,7 +46,7 @@ Welcome to the official repository for mobile applications built and maintained 
 - **Folder:** [`/VPVideoPlayer`](./VPVideoPlayer)
 - **App Name:** `VP Video Player - HD Media Player`
 - **Package Name:** `com.ultraspeakai.vpvideoplayer`
-- **Developer Email:** support@ultraspeakai.com / ultraspeakai@gmail.com
+- **Developer Email:** ultraspeakai@gmail.com
 - **Tech Stack:** Jetpack Compose, Material 3, ExoPlayer Media3, Kotlin Coroutines, AdMob SDK
 - **Key Features:** MX Player white theme design, folder notification badges, background playback with lockscreen controls, Wi-Fi cross-platform file transfer, lossless video trimmer, MP3 audio extractor, safe recycle bin, 16 languages, and AdMob banner/interstitial ads.
 - **Official Privacy Policy URL:** [https://ultraspeakai-maker.github.io/myapps/VPVideoPlayer/privacy_policy.html](https://ultraspeakai-maker.github.io/myapps/VPVideoPlayer/privacy_policy.html)

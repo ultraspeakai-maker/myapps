@@ -42,6 +42,18 @@ Welcome to the official repository for mobile applications built and maintained 
 
 ---
 
+### 4. 🎬 VP Video Player - Smart HD Video & Audio Player
+- **Folder:** [`/VPVideoPlayer`](./VPVideoPlayer)
+- **App Name:** `VP Video Player - HD Media Player`
+- **Package Name:** `com.ultraspeakai.vpvideoplayer`
+- **Developer Email:** support@ultraspeakai.com / ultraspeakai@gmail.com
+- **Tech Stack:** Jetpack Compose, Material 3, ExoPlayer Media3, Kotlin Coroutines, AdMob SDK
+- **Key Features:** MX Player white theme design, folder notification badges, background playback with lockscreen controls, Wi-Fi cross-platform file transfer, lossless video trimmer, MP3 audio extractor, safe recycle bin, 16 languages, and AdMob banner/interstitial ads.
+- **Official Privacy Policy URL:** [https://ultraspeakai-maker.github.io/myapps/VPVideoPlayer/privacy_policy.html](https://ultraspeakai-maker.github.io/myapps/VPVideoPlayer/privacy_policy.html)
+- **Play Store Review Documents:** [PLAYSTORE_LISTING.md](./VPVideoPlayer/PLAYSTORE_LISTING.md) | [DATA_SAFETY_DECLARATION.md](./VPVideoPlayer/DATA_SAFETY_DECLARATION.md)
+
+---
+
 ## 📂 Repository Structure
 
 ```text
@@ -62,7 +74,14 @@ myapps/
 │   ├── PLAYSTORE_LISTING.md <-- Store Listing Metadata
 │   └── DATA_SAFETY_DECLARATION.md
 │
-└── AIStockNews/             <-- AI Stock News App Directory
+├── AIStockNews/             <-- AI Stock News App Directory
+│   ├── README.md            <-- App Technical Overview
+│   ├── PRIVACY_POLICY.md    <-- Privacy Policy (Markdown)
+│   ├── privacy_policy.html  <-- Privacy Policy (HTML for Play Store)
+│   ├── PLAYSTORE_LISTING.md <-- Store Listing Metadata
+│   └── DATA_SAFETY_DECLARATION.md
+│
+└── VPVideoPlayer/           <-- VP Video Player App Directory
     ├── README.md            <-- App Technical Overview
     ├── PRIVACY_POLICY.md    <-- Privacy Policy (Markdown)
     ├── privacy_policy.html  <-- Privacy Policy (HTML for Play Store)
@@ -73,8 +92,9 @@ myapps/
 ---
 
 ## 🌐 Public Links & Contact
-- **Developer Email:** ultraspeakai@gmail.com
+- **Developer Email:** ultraspeakai@gmail.com / support@ultraspeakai.com
 - **GitHub Repository:** [https://github.com/ultraspeakai-maker/myapps](https://github.com/ultraspeakai-maker/myapps)
 - **V Spy Camera Privacy Policy:** [https://ultraspeakai-maker.github.io/myapps/VSpyCamera/privacy_policy.html](https://ultraspeakai-maker.github.io/myapps/VSpyCamera/privacy_policy.html)
 - **PDF Editor Master Privacy Policy:** [https://ultraspeakai-maker.github.io/myapps/PdfEditorMaster/privacy_policy.html](https://ultraspeakai-maker.github.io/myapps/PdfEditorMaster/privacy_policy.html)
 - **AI Stock News Privacy Policy:** [https://ultraspeakai-maker.github.io/myapps/AIStockNews/privacy_policy.html](https://ultraspeakai-maker.github.io/myapps/AIStockNews/privacy_policy.html)
+- **VP Video Player Privacy Policy:** [https://ultraspeakai-maker.github.io/myapps/VPVideoPlayer/privacy_policy.html](https://ultraspeakai-maker.github.io/myapps/VPVideoPlayer/privacy_policy.html)
